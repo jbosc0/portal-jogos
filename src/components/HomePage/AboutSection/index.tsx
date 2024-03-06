@@ -36,17 +36,17 @@ export const AboutSection = () => {
 		>
 			<Heading
 				as={'b'}
-				fontSize={'90px'}
+				fontSize={'80px'}
 				color={'white'}
 				textDecoration={'underline #C329FFCC'}
 			>
 				Sobre
 			</Heading>
-			<Text as={'b'} fontSize={'38px'} color={'white'}>
+			<Text as={'b'} fontSize={'35px'} color={'white'}>
 				Aqui você aprenderá sobre jogos e seus processos de
 				desenvolvimento:
 			</Text>
-			<Flex justify={'center'} align={'center'} gap={'5%'} marginY={'5%'}>
+			<Flex justify={'center'} align={'center'} gap={'5%'} marginY={'4%'}>
 				{cardsProps.map((item, index) => (
 					<Card
 						key={index}
@@ -61,7 +61,7 @@ export const AboutSection = () => {
 				height={'7vh'}
 				rounded={'full'}
 				alignSelf={'center'}
-				fontSize={'2rem'}
+				fontSize={'2.2rem'}
 				fontWeight={'bold'}
 			>
 				<Link href={'/informations'}>Saiba Mais</Link>

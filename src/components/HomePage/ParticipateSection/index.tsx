@@ -17,7 +17,7 @@ export const ParticipateSection = () => {
 		>
 			<Heading
 				as={'b'}
-				fontSize={'90px'}
+				fontSize={'80px'}
 				color={'white'}
 				textDecoration={'underline #C329FFCC'}
 			>
@@ -25,10 +25,10 @@ export const ParticipateSection = () => {
 			</Heading>
 			<Text
 				as={'b'}
-				fontSize={'90px'}
+				fontSize={'5.1rem'}
 				color={'white'}
 				alignSelf={'center'}
-				width={'75%'}
+				width={'85%'}
 				textAlign={'center'}
 			>
 				Deseja se tornar um sensei? Aperte no botão abaixo e nos envie

@@ -17,16 +17,16 @@ export const HeroSection = () => {
 			<WithSubnavigation />
 			<Flex
 				width={'100%'}
-				minHeight={'100vh'}
-				paddingInline={'8%'}
+				minHeight={'90vh'}
+				paddingInline={'6%'}
 				flexDir={'column'}
 				justifyContent={'space-evenly'}
 			>
 				<Text
 					as={'b'}
 					color={'white'}
-					fontSize={'5.625rem'}
-					width={'50%'}
+					fontSize={'5.1rem'}
+					width={'55%'}
 				>
 					Desenvolva <span className={styles.fontColor}>jogos</span>{' '}
 					incríveis e traga suas{' '}
@@ -37,7 +37,7 @@ export const HeroSection = () => {
 					width={'20%'}
 					height={'8vh'}
 					alignSelf={'center'}
-					fontSize={'2rem'}
+					fontSize={'2.1rem'}
 					fontWeight={'bold'}
 				>
 					<Link href="/login">Entre Agora</Link>
