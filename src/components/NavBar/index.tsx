@@ -1,8 +1,9 @@
 'use client';
 import Link from 'next/link';
 
-import { Button, Flex, Text } from '@chakra-ui/react';
+import { Button, Flex, Image } from '@chakra-ui/react';
 import { parseCookies } from 'nookies';
+
 
 const navItems = [
 	{ label: 'Home', href: '/' },
@@ -25,12 +26,12 @@ export const WithSubnavigation = () => {
 			justifyContent={'space-between'}
 			width={'100%'}
 			color={'white'}
-			padding={5}
+			padding ={1}
+			backgroundColor={'purple.700'} 
+
 		>
 			<Flex justifySelf={'flex-start'} alignItems={'center'} gap={5}>
-				<Text as={'b'} fontSize={'2xl'}>
-					PDJ
-				</Text>
+				<Image src={'./img/pdj.png'} alt={'PDJ Image'} width={'80px'} height={'80px'}/>
 				{token ? (
 					<>
 						{navItemsUser.map((navItem, index) => (
