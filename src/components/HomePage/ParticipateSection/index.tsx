@@ -8,8 +8,10 @@ export const ParticipateSection = () => {
 			flexDir={'column'}
 			justifyContent={'space-around'}
 			width={'100%'}
-			height={'90vh'}
+			minHeight={'100vh'}
 			backgroundColor={'#120E27'}
+			backgroundImage={"url('/img/bgTeamSection.png')"}
+			backgroundSize={'cover'}
 			paddingY={'2%'}
 			paddingInline={'8%'}
 		>
