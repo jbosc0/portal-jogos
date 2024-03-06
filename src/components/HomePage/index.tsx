@@ -7,6 +7,7 @@ export const HomePage = () => {
 		<>
 			<HeroSection />
 			<AboutSection />
+			<TeamSection />
 			<ParticipateSection />
 		</>
 	);

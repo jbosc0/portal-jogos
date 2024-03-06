@@ -17,22 +17,23 @@ export const Card = ({ icon, title, description }: CardProps) => {
 			width={'25%'}
 			height={'45vh'}
 			paddingInline={'1.5%'}
-			paddingY={'4%'}
+			paddingY={'3%'}
+			paddingBottom={'10%'}
 			gap={'5%'}
 			dropShadow={'4px 4px 4px 0px #00000040'}
 			borderRadius={'10px'}
 		>
-			{icon == 'book' ? (
+			{/* {icon == 'book' ? (
 				<FiBook color={'white'} fontSize={'6rem'} />
 			) : icon == 'pen' ? (
 				<FiPenTool color={'white'} fontSize={'6rem'} />
 			) : icon == 'airplay' ? (
 				<FiAirplay color={'white'} fontSize={'6rem'} />
-			) : null}
-			<Text as={'b'} fontSize={'3.125rem'} color={'#C98DF9'}>
+			) : null} */}
+			<Text as={'b'} fontSize={'2.5rem'} color={'#C98DF9'}>
 				{title}
 			</Text>
-			<Text fontSize={'1.563rem'} color={'white'}>
+			<Text fontSize={'1.45rem'} color={'white'}>
 				{description}
 			</Text>
 		</Flex>
