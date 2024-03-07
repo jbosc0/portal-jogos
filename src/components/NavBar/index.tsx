@@ -18,6 +18,7 @@ const navItemsUser = [
 	{ label: 'Perfil', href: '/profile' }
 ];
 
+const caminhoImagem = '../img/pdj.png';
 export const WithSubnavigation = () => {
 	const { 'portal-jogos.token': token } = parseCookies();
 
@@ -32,7 +33,9 @@ export const WithSubnavigation = () => {
 
 			>
 				<Flex justifySelf={'flex-start'} alignItems={'center'} gap={5}>
-					<Image src={'./img/pdj.png'} alt={'PDJ Imagem'} width={'60px'} height={'60px'}/>
+					<Link href={'/'}>
+						<Image src={caminhoImagem} alt={'PDJ Imagem'} width={'60px'} height={'60px'}/>
+					</Link>
 					{token ? (
 						<>
 							{navItemsUser.map((navItem, index) => (

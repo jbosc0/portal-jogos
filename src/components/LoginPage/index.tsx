@@ -21,11 +21,14 @@ import { api } from 'services/api';
 import * as yup from 'yup';
 
 import { LoginFormProps } from './type';
+import Image from 'next/image';
 
 const LoginFormSchema = yup.object().shape({
 	Email: yup.string().required('Email obrigatório').email('Email inválido'),
 	Senha: yup.string().required('Senha obrigatória')
 });
+
+
 
 export const LoginPage = () => {
 	const toast = useToast();
@@ -98,6 +101,7 @@ export const LoginPage = () => {
 
 	// para destruir o cookie:
 	// destroyCookie(undefined, 'portal-jogos.token');
+	const caminhoImagem = '../img/pdj.png';
 
 	return (
 		<Flex
@@ -107,8 +111,12 @@ export const LoginPage = () => {
 			minHeight={'100vh'}
 			flexDir={'column'}
 			bg={'linear-gradient(180deg, #25167b 0%, #010101 100%)'}
-			gap={'10'}
+			gap={'5'}
+			paddingBottom={60}
 		>
+			<Link href={'/'}>
+				<Image src={'/img/pdj.png'} alt={'PDJ Imagem'} width={120} height={120}/>
+			</Link>
 			<Heading
 				color={'#f5f5f5'}
 				fontSize={{
@@ -210,13 +218,6 @@ export const LoginPage = () => {
 				_hover={{ textDecoration: 'underline #B530F3' }}
 			>
 				Não tem uma conta? Registre-se
-			</Link>
-			<Link
-				as={NextLink}
-				href={'/'}
-				color={'white'}
-				_hover={{ textDecoration: 'underline #B530F3' }}
-			>
 			</Link>
 		</Flex>
 	);
