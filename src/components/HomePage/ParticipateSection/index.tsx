@@ -10,6 +10,8 @@ export const ParticipateSection = () => {
 			width={'100%'}
 			height={'90vh'}
 			backgroundColor={'#120E27'}
+			backgroundImage={"url('/img/bgTeamSection.png')"}
+			backgroundSize={'cover'}
 			paddingY={'2%'}
 			paddingInline={'8%'}
 		>

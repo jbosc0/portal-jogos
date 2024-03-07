@@ -211,6 +211,14 @@ export const LoginPage = () => {
 			>
 				Não tem uma conta? Registre-se
 			</Link>
+			<Link
+				as={NextLink}
+				href={'/'}
+				color={'white'}
+				_hover={{ textDecoration: 'underline #B530F3' }}
+			>
+				Desistiu de logar? Volte para a home
+			</Link>
 		</Flex>
 	);
 };
