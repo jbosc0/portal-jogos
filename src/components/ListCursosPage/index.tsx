@@ -73,7 +73,7 @@ export default function ListCursosPage() {
 				<Flex justifyContent={'left'} flexDir={'column'} gap={4}>
 					<Heading
 						borderBottom={'10px solid #B530F3'}
-						fontSize={'7.0625rem'}
+						fontSize={'70px'}
 						color={'#FFFFFF'}
 						width={'min-content'}
 					>

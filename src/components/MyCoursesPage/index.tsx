@@ -48,7 +48,7 @@ export default function MyCoursesPage() {
 				<Flex justifyContent={'left'} flexDir={'column'} gap={4}>
 					<Heading
 						borderBottom={'10px solid #B530F3'}
-						fontSize={'7.0625rem'}
+						fontSize={'70px'}
 						color={'#FFFFFF'}
 						width={'min-content'}
 					>
@@ -57,11 +57,11 @@ export default function MyCoursesPage() {
 					{loading && <p>Loading...</p>}
 					{error && <p>Erro ao carregar os cursos</p>}
 					{!loading && !error && (
-						<Box gap={40} height={'70vh'} overflowY={'scroll'}>
+						<>
 							{cursos.map((curso) => (
-								<CardCursoEdit key={curso.Id} curso={curso} />
+								<CardCursoEdit curso={curso} key={curso.Id} />
 							))}
-						</Box>
+						</>
 					)}
 				</Flex>
 			</Flex>
