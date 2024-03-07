@@ -113,10 +113,10 @@ export const LoginPage = () => {
 				color={'#f5f5f5'}
 				fontSize={{
 					base: '1.625rem',
-					sm: '3.75rem',
-					md: '3.75rem',
-					lg: '5rem',
-					xl: '5rem'
+					sm: '3rem',
+					md: '3rem',
+					lg: '4rem',
+					xl: 'rem'
 				}}
 				// mb={4}
 				textAlign={'center'}

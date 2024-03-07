@@ -5,7 +5,7 @@ import { Providers } from 'components/Providers';
 import 'styles/globals.css';
 
 export const metadata: Metadata = {
-	title: 'Nises Project'
+	title: 'Portal de Jogos'
 	// icons: {
 	// 	shortcut: { url: '/favicon.ico', type: 'image/x-icon' }
 	// }
