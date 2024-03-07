@@ -8,6 +8,7 @@ import { CardAulas } from './CardModule';
 // import ComplementaryMaterial from './ComplementaryMateial';
 import { Aula, Modulo } from './type';
 import VideoSection from './VideoSection';
+import { WithSubnavigation } from 'components/NavBar';
 
 export default function ClassPage({ classId }: { classId: string }) {
 	const [aula, setAula] = useState<Aula>();
@@ -30,6 +31,7 @@ export default function ClassPage({ classId }: { classId: string }) {
 			height={'100vh'}
 			backgroundImage={"url('/img/bgHeroSection.png')"}
 		>
+			<WithSubnavigation />
 			<Flex
 				width={'100vw'}
 				height={'100vh'}
