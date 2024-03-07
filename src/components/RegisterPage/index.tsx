@@ -26,6 +26,8 @@ import * as yup from 'yup';
 import styles from './styles.module.scss';
 import { RegisterFormProps, types } from './type';
 
+import Image from 'next/image';
+
 const RegisterFormSchema = yup.object().shape({
 	userName: yup.string().required('Nome de usuário obrigatório'),
 	tagName: yup.string().required('TagName obrigatório'),
@@ -120,12 +122,16 @@ export const RegisterPage = () => {
 			justifyContent={'center'}
 			alignItems={'center'}
 			width={'100%'}
-			height={'100vh'}
+			height={'auto'}
 			padding={'2%'}
 			flexDir={'column'}
 			bg={'linear-gradient(180deg, #25167b 0%, #010101 100%)'}
-			gap={'10'}
+			gap={'0'}
+			
 		>
+			<Link href={'/'}>
+				<Image src={'/img/pdj.png'} alt={'PDJ Imagem'} width={120} height={120}/>
+			</Link>
 			<Heading
 				color={'#f5f5f5'}
 				fontSize={{
@@ -153,7 +159,7 @@ export const RegisterPage = () => {
 						xl: '25vw'
 					}}
 				>
-					<FormControl>
+					<FormControl paddingTop={3}>
 						<FormLabel color={'#f5f5f5'}>Nome de usuário</FormLabel>
 						<InputGroup>
 							<InputLeftElement pointerEvents={'none'}>
