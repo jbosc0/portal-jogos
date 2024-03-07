@@ -4,6 +4,7 @@ import { Box, Flex, Grid, GridItem } from '@chakra-ui/react';
 
 import CursosProgress from './CursosProgress';
 import XpProgress from './XpProgress';
+import LastAchievement from './LastAchievement';
 
 export default function DashboardStudentPage() {
 	return (
@@ -13,13 +14,13 @@ export default function DashboardStudentPage() {
 				<Grid
 					templateRows="repeat(2, 2fr)"
 					templateColumns="repeat(4, 1fr)"
-					gap={8}
+					gap={5}
 					width={'100%'}
 					height={'100vh'}
-					paddingX={'7.5rem'}
-					paddingY={'7.5rem'}
+					paddingX={'8.5%'}
+					paddingY={'2rem'}
 				>
-					<GridItem colSpan={1} bg="red"></GridItem>
+					<GridItem colSpan={1}><LastAchievement /></GridItem>
 					<GridItem>
 						<XpProgress />
 					</GridItem>

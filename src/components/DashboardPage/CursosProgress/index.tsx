@@ -57,7 +57,8 @@ export default function CursosProgress() {
 				alignItems={'center'}
 			>
 				<CardBody
-					width={{ lg: '40rem' }}
+					width={{ lg: '100%' }}
+					height={{ lg: '100%' }}
 					display={'flex'}
 					justifyContent={'center'}
 					alignItems={'flex-start'}
@@ -73,7 +74,7 @@ export default function CursosProgress() {
 								<Tr>
 									<Th border="none">
 										<Heading
-											fontSize={'1.75rem'}
+											fontSize={'1.50rem'}
 											color="#f5f5f5"
 										>
 											Cursos em andamento
@@ -81,7 +82,7 @@ export default function CursosProgress() {
 									</Th>
 									<Th border="none">
 										<Heading
-											fontSize={'1.75rem'}
+											fontSize={'1.50rem'}
 											textAlign={'center'}
 											color="#f5f5f5"
 										>
@@ -100,7 +101,7 @@ export default function CursosProgress() {
 											}}
 										>
 											<Text
-												fontSize={'1.25rem'}
+												fontSize={'1.15rem'}
 												fontWeight={'100'}
 											>
 												<Link
@@ -112,7 +113,7 @@ export default function CursosProgress() {
 										</Td>
 										<Td alignItems={'center'} border="none">
 											<Text
-												fontSize={'1.25rem'}
+												fontSize={'1.15rem'}
 												fontWeight={'100'}
 												textAlign={'center'}
 											>
