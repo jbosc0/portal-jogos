@@ -36,7 +36,7 @@ export const AboutSection = () => {
 		>
 			<Heading
 				as={'b'}
-				fontSize={'80px'}
+				fontSize={'70px'}
 				color={'white'}
 				textDecoration={'underline #C329FFCC'}
 			>

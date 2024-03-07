@@ -8,14 +8,16 @@ export const ParticipateSection = () => {
 			flexDir={'column'}
 			justifyContent={'space-around'}
 			width={'100%'}
-			height={'90vh'}
-			backgroundColor={'#120E27'}
+			height={'100vh'}
 			paddingY={'2%'}
 			paddingInline={'8%'}
+			backgroundImage={'url("/img/bgTeamSection.png")'}
+			backgroundSize={'cover'}
+            backgroundPosition={'center'}
 		>
 			<Heading
 				as={'b'}
-				fontSize={'80px'}
+				fontSize={'70px'}
 				color={'white'}
 				textDecoration={'underline #C329FFCC'}
 			>
@@ -23,7 +25,7 @@ export const ParticipateSection = () => {
 			</Heading>
 			<Text
 				as={'b'}
-				fontSize={'5.1rem'}
+				fontSize={'4.1rem'}
 				color={'white'}
 				alignSelf={'center'}
 				width={'85%'}
