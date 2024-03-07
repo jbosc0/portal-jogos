@@ -67,7 +67,8 @@ export default function CursosProgress() {
 					<TableContainer
 						width={'100%'}
 						height={'100%'}
-						overflowY={'scroll'}
+						overflowY={'hidden'}
+						overflowX={'hidden'}
 					>
 						<Table color="#f5f5f5">
 							<Thead>

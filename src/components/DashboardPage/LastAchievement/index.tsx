@@ -1,9 +1,10 @@
 'use client';
 
-import { Card, Flex } from "@chakra-ui/react";
+import { Card, CardBody, Flex, Text } from "@chakra-ui/react";
 import { userProps } from "components/ProfilePage/type";
 
 import { jwtDecode } from 'jwt-decode';
+import Image from "next/image";
 import { parseCookies } from 'nookies';
 import { useEffect, useState } from "react";
 
@@ -26,7 +27,26 @@ export default function LastAchievement() {
 				borderTop={'34px solid #2A2156'}
 				justifyContent={'center'}
 				alignItems={'center'}>
-
+                    <CardBody
+                        width={{ lg: '1591px' }}
+					    display={'flex'}
+					    justifyContent={'center'}
+					    alignItems={'center'}
+					    flexDir={'column'}>
+                        <Image 
+                            src={"/img/Star2.png"} 
+                            alt="Last Achievement" 
+                            width={100} 
+                            height={100} />
+                        <Text 
+                            color={'#F5F5F5'}
+						    fontWeight={'500'}
+						    fontSize={'2rem'}
+                            paddingTop={55}
+                        >
+                            Introdução ao Python
+                        </Text>
+                    </CardBody>
             </Card>
         </Flex>
     );
