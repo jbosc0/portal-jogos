@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { Button, Flex, Image } from '@chakra-ui/react';
 import { parseCookies } from 'nookies';
+import nookies from 'nookies';
 
 
 const navItems = [
@@ -62,6 +63,22 @@ export const WithSubnavigation = () => {
 					}}
 				>
 					<Link href={'/login'}>Login</Link>
+				</Button>
+			)}
+
+			{token && (
+				<Button
+					variant={'outline'}
+					borderColor={'#FA0505'}
+					rounded={'5'}
+					color={'#FA0505'}
+					_hover={{
+						backgroundColor: '#Fa0505',
+						color: '#0e0b1c'
+					}}
+					onClick={() => nookies.destroy(null, 'portal-jogos.token')}
+				>
+					<Link href={'/login'}>Sair</Link>
 				</Button>
 			)}
 		</Flex>

@@ -104,7 +104,7 @@ export default function CursosProgress() {
 												fontWeight={'100'}
 											>
 												<Link
-													href={`/cursos/${curso.idCurso}`}
+													href={`/class/${curso.idCurso}`}
 												>
 													{curso.TituloCurso}
 												</Link>
