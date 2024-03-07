@@ -132,8 +132,8 @@ export const RegisterPage = () => {
 					base: '1.625rem',
 					sm: '3.75rem',
 					md: '3.75rem',
-					lg: '5rem',
-					xl: '5rem'
+					lg: '4rem',
+					xl: '4rem'
 				}}
 				// mb={4}
 				textAlign={'center'}
@@ -233,7 +233,9 @@ export const RegisterPage = () => {
 							</option>
 						</Select>
 					</FormControl>
-					<FormControl>
+					<FormControl
+    					title="Sua senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e caracteres especiais."
+					>
 						<FormLabel mt={4} color={'#f5f5f5'}>
 							Senha
 						</FormLabel>
