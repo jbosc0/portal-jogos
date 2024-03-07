@@ -64,13 +64,14 @@ export default function ListCursosPage() {
 		<Box backgroundImage={"url('/img/bgHeroSection.png')"}>
 			<WithSubnavigation />
 			<Flex
-				width={'100vw'}
-				height={'100vh'}
+				width={'110vw'}
+				height={'125vh'}
 				flexDirection={'column'}
-				justifyContent={'center'}
-				alignItems={'center'}
+				justifyContent={'start'}
+				alignItems={'start'}
+				paddingLeft={120}
 			>
-				<Flex justifyContent={'left'} flexDir={'column'} gap={4}>
+				<Flex justifyContent={'start'} flexDir={'column'} gap={15}>
 					<Heading
 						borderBottom={'10px solid #B530F3'}
 						fontSize={'70px'}

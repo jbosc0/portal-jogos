@@ -10,7 +10,7 @@ export function CardCursoEdit({ curso }: { curso: Curso }) {
 	return (
 		<Card
 			bg={'#120E27'}
-			width={{ lg: '1591px' }}
+			width={{ lg: '1300px' }}
 			height={{ lg: '226px' }}
 			rounded={'14px'}
 			borderTop={'34px solid #2A2156'}
@@ -19,7 +19,7 @@ export function CardCursoEdit({ curso }: { curso: Curso }) {
 			marginTop={'20px'}
 		>
 			<CardBody
-				width={{ lg: '1591px' }}
+				width={{ lg: '1400px' }}
 				display={'flex'}
 				justifyContent={'center'}
 			>
@@ -30,7 +30,7 @@ export function CardCursoEdit({ curso }: { curso: Curso }) {
 					width={{ lg: '90%' }}
 				>
 					<Flex flexDirection={'column'}>
-						<Flex alignItems={'center'}>
+						<Flex alignItems={'start'}>
 							<Text
 								color={'#F5F5F5'}
 								fontFamily={'Arial'}
@@ -57,7 +57,7 @@ export function CardCursoEdit({ curso }: { curso: Curso }) {
 							color: '#0e0b1c'
 						}}
 						width={{ lg: '18.9375rem' }}
-						height={{ lg: '6rem' }}
+						height={{ lg: '5rem' }}
 						fontSize={{ lg: '1.5rem' }}
 					>
 						<Link href={'/beneficios'}>Adicionar Conteúdo +</Link>

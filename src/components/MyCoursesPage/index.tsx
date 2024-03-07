@@ -38,33 +38,37 @@ export default function MyCoursesPage() {
 	return (
 		<Box backgroundImage={"url('/img/bgHeroSection.png')"}>
 			<WithSubnavigation />
-				<Flex
-					width={'100vw'}
-					height={'100vh'}
-					flexDirection={'column'}
-					justifyContent={'center'}
-					alignItems={'center'}
-				>
-					<Flex justifyContent={'left'} flexDir={'column'} gap={15}>
-						<Heading
-							borderBottom={'10px solid #B530F3'}
-							fontSize={'70px'}
-							color={'#FFFFFF'}
-							width={'min-content'}
-						>
-							Cursos
-						</Heading>
-						{loading && <p>Loading...</p>}
-						{error && <p>Erro ao carregar os cursos</p>}
-						{!loading && !error && (
+			<Flex
+				width={'110vw'}
+				height={'125vh'}
+				flexDirection={'column'}
+				justifyContent={'start'}
+				alignItems={'start'}
+				paddingLeft={120}
+			>
+				<Flex justifyContent={'start'} flexDir={'column'} gap={15}>
+					<Heading
+						borderBottom={'10px solid #B530F3'}
+						fontSize={'70px'}
+						color={'#FFFFFF'}
+						width={'min-content'}
+					>
+						Cursos
+					</Heading>
+						{/* Adicione um espaço extra entre o Heading e os cards */}
+						<Box mt={5}>
+							{loading && <p>Loading...</p>}
+							{error && <p>Erro ao carregar os cursos</p>}
+							{!loading && !error && (
 							<>
 								{cursos.map((curso) => (
 									<CardCursoEdit curso={curso} key={curso.Id} />
 								))}
 							</>
-						)}
+							)}
+						</Box>
 					</Flex>
 				</Flex>
-			</Box>
+		</Box>
 	);
 }

@@ -8,7 +8,7 @@ export const ParticipateSection = () => {
 			flexDir={'column'}
 			justifyContent={'space-around'}
 			width={'100%'}
-			height={'90vh'}
+			height={'100vh'}
 			backgroundColor={'#120E27'}
 			paddingY={'2%'}
 			paddingInline={'8%'}

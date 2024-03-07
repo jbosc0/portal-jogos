@@ -124,7 +124,7 @@ export const LoginPage = () => {
 					sm: '3rem',
 					md: '3rem',
 					lg: '4rem',
-					xl: 'rem'
+					xl: '4rem'
 				}}
 				// mb={4}
 				textAlign={'center'}
