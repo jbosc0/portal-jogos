@@ -57,7 +57,7 @@ export default function CursosProgress() {
 				alignItems={'center'}
 			>
 				<CardBody
-					width={{ lg: '52rem' }}
+					width={{ lg: '40rem' }}
 					display={'flex'}
 					justifyContent={'center'}
 					alignItems={'flex-start'}
@@ -65,7 +65,7 @@ export default function CursosProgress() {
 				>
 					<TableContainer
 						width={'100%'}
-						height={'31vh'}
+						height={'100%'}
 						overflowY={'scroll'}
 					>
 						<Table color="#f5f5f5">
