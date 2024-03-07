@@ -25,7 +25,7 @@ export const WhatIsSection = () => {
 			>
 				<Heading
 					as={'b'}
-					fontSize={'75px'}
+					fontSize={'60px'}
 					color={'white'}
 					textDecoration={'underline #C329FFCC'}
 				>

@@ -45,7 +45,7 @@ export const GenreSection = () => {
 		>
 			<Heading
 				as={'b'}
-				fontSize={'75px'}
+				fontSize={'60px'}
 				color={'white'}
 				textDecoration={'underline #C329FFCC'}
 				padding={'15px'}

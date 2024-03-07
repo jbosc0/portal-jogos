@@ -38,33 +38,33 @@ export default function MyCoursesPage() {
 	return (
 		<Box backgroundImage={"url('/img/bgHeroSection.png')"}>
 			<WithSubnavigation />
-			<Flex
-				width={'100vw'}
-				height={'100vh'}
-				flexDirection={'column'}
-				justifyContent={'center'}
-				alignItems={'center'}
-			>
-				<Flex justifyContent={'left'} flexDir={'column'} gap={4}>
-					<Heading
-						borderBottom={'10px solid #B530F3'}
-						fontSize={'70px'}
-						color={'#FFFFFF'}
-						width={'min-content'}
-					>
-						Cursos
-					</Heading>
-					{loading && <p>Loading...</p>}
-					{error && <p>Erro ao carregar os cursos</p>}
-					{!loading && !error && (
-						<>
-							{cursos.map((curso) => (
-								<CardCursoEdit curso={curso} key={curso.Id} />
-							))}
-						</>
-					)}
+				<Flex
+					width={'100vw'}
+					height={'100vh'}
+					flexDirection={'column'}
+					justifyContent={'center'}
+					alignItems={'center'}
+				>
+					<Flex justifyContent={'left'} flexDir={'column'} gap={15}>
+						<Heading
+							borderBottom={'10px solid #B530F3'}
+							fontSize={'70px'}
+							color={'#FFFFFF'}
+							width={'min-content'}
+						>
+							Cursos
+						</Heading>
+						{loading && <p>Loading...</p>}
+						{error && <p>Erro ao carregar os cursos</p>}
+						{!loading && !error && (
+							<>
+								{cursos.map((curso) => (
+									<CardCursoEdit curso={curso} key={curso.Id} />
+								))}
+							</>
+						)}
+					</Flex>
 				</Flex>
-			</Flex>
-		</Box>
+			</Box>
 	);
 }

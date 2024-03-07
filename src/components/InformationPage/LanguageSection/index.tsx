@@ -37,7 +37,7 @@ export const LanguageSection = () => {
 		>
 			<Heading
 				as={'b'}
-				fontSize={'71px'}
+				fontSize={'60px'}
 				color={'white'}
 				textDecoration={'underline #C329FFCC'}
 				padding={'15px'}
