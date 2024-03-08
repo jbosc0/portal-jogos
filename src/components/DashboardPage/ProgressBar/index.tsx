@@ -27,7 +27,7 @@ export default function ProgressBar() {
 				justifyContent={'space-between'}
 				alignItems={'center'}>
                     <Box
-                        width={'90%'}
+                        width={'93%'}
                         padding={5}>
                         <Text
                             color={'#F5F5F5'}
@@ -38,13 +38,13 @@ export default function ProgressBar() {
                         </Text>
                         <Progress
                             value={XP}
-                            size='xs'
+                            size={'xs'}
                             maxWidth={'100%'}
                             minWidth={'100%'}
                             colorScheme={'purple'}
-                            color={'#B530F3'}
+                            // color={'#0A0A0A'}
                             width={'80%'}
-                            height={'2rem'}
+                            height={'1.5rem'}
                             borderRadius={'10px'}
                             
                         />
