@@ -9,12 +9,12 @@ import { parseCookies } from 'nookies';
 import { useEffect, useState } from "react";
 
 export default function LastAchievement() {
-    const { 'portal-jogos.token': token } = parseCookies();
+    // const { 'portal-jogos.token': token } = parseCookies();
 
-    const [user] = useState<userProps | null>(jwtDecode(token) || null);
+    // const [user] = useState<userProps | null>(jwtDecode(token) || null);
 
-    const [lastAchievement] = useState(0);
-    // useEffect(() => {
+    // const [lastAchievement] = useState(0);
+    // // useEffect(() => {
 
 
     return (
