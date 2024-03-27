@@ -15,6 +15,7 @@ const navItemsUser = [
 	{ label: 'Dashboard', href: '/dashboard' },
 	{ label: 'Explorar', href: '/listCursos' },
 	{ label: 'Meus Cursos', href: '/myCourses' },
+	{ label: 'NoPagination', href: '/noPagination' },
 	{ label: 'Perfil', href: '/profile' }
 ];
 
