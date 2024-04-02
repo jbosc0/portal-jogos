@@ -1,53 +1,43 @@
 'use client'
 import { Box, Card, Flex, Progress, Text } from "@chakra-ui/react";
-import { userProps } from "components/ProfilePage/type";
-import { jwtDecode } from "jwt-decode";
-import { parseCookies } from "nookies";
-import { useState, useEffect } from "react";
 
-export default function ProgressBar() {
-    const { 'portal-jogos.token': token } = parseCookies();
+interface xpProps {
+	xp: number;
+}
 
-	const [user] = useState<userProps | null>(jwtDecode(token) || null);
-	const [XP, setXP] = useState(0);
-	useEffect(() => {
-		setXP(user?.result?.XP || 0);
-	}, [user?.result?.XP]);
-
-	console.log(user?.result?.XP);
-    
+export default function ProgressBar(props: xpProps) {
     return (
         <Flex justifyContent={'center'} alignItems={'center'}>
             <Card
                 bg={'#120E27'}
 				width={{ lg: '100%' }}
-				height={{ lg: '18rem' }}
+				height={{ lg: '12.5rem' }}
 				rounded={'14px'}
 				borderTop={'34px solid #2A2156'}
 				justifyContent={'space-between'}
 				alignItems={'center'}>
-                    <Box
-                        width={'93%'}
-                        padding={5}>
-                        <Text
-                            color={'#F5F5F5'}
-                            fontWeight={'500'}
-                            fontSize={'2rem'}
-                            paddingBottom={'5%'}>
-                            Seu progresso até a próxima insignia:
-                        </Text>
-                        <Progress
-                            value={XP}
-                            size={'xs'}
-                            maxWidth={'100%'}
-                            minWidth={'100%'}
-                            colorScheme={'purple'}
-                            // color={'#0A0A0A'}
-                            width={'80%'}
-                            height={'1.5rem'}
-                            borderRadius={'10px'}
+                <Box
+                    width={'100%'}
+                    padding={3}
+                    paddingLeft={'70px'}>
+                    <Text
+                        color={'#F5F5F5'}
+                        fontWeight={'300'}
+                        fontSize={'2rem'}
+                        paddingBottom={'2%'}>
+                        Seu progresso até a próxima insignia:
+                    </Text>
+                    <Progress
+                        value={props.xp}
+                        size={'xs'}
+                        maxWidth={'90%'}
+                        minWidth={'90%'}
+                        colorScheme={'purple'}
+                        width={'90%'}
+                        height={'1.4rem'}
+                        borderRadius={'10px'}
                             
-                        />
+                    />
                     </Box>
             </Card>
         </Flex>

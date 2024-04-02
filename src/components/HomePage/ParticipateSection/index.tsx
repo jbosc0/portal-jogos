@@ -9,12 +9,10 @@ export const ParticipateSection = () => {
 			justifyContent={'space-around'}
 			width={'100%'}
 			height={'100vh'}
-			backgroundColor={'#120E27'}
 			paddingY={'2%'}
 			paddingInline={'8%'}
-			backgroundImage={'url("/img/bgTeamSection.png")'}
-			backgroundSize={'cover'}
-            backgroundPosition={'center'}
+			minHeight="100vh"
+  			background="linear-gradient(to bottom, #38102F, #000000)"
 		>
 			<Heading
 				as={'b'}

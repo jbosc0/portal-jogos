@@ -3,65 +3,51 @@ import { useState, useEffect } from 'react';
 
 import { CardCursoEdit } from 'components/CardCursoEdit';
 import { WithSubnavigation } from 'components/NavBar';
+import { userProps } from 'components/ProfilePage/type';
 
-import { Box, Flex, Heading } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading } from '@chakra-ui/react';
 import { api } from 'services/api';
 
 import { Curso } from './type';
 
-// const courses: Curso[] = [
-// 	{
-// 		Id: 1,
-// 		Titulo: 'Desenvolvimento de jogos 2D em Unity',
-// 		Descricao:
-// 			'O curso "Desenvolvimento de Jogos 2D em Unity" é uma jornada emocionante no mundo da criação de jogos, projetada para aspirantes a desenvolvedores de jogos e entusiastas da indústria de games. Neste curso envolvente, você aprenderá a usar a poderosa plataforma Unity para desenvolver jogos 2D envolventes, explorando desde os conceitos básicos até técnicas avançadas. Ao final do curso, você estará equipado com o conhecimento e as habilidades necessárias para desenvolver seus próprios jogos 2D criativos e emocionantes, prontos para compartilhar com o mundo ou até mesmo iniciar sua carreira na indústria de desenvolvimento de jogos. Prepare-se para liberar sua imaginação e transformar suas ideias em realidade no emocionante universo dos jogos 2D em Unity',
-// 		CriadorId: 1,
-// 		Duracao: 100,
-// 		XP: 100
-// 	},
-// 	{
-// 		Id: 2,
-// 		Titulo: 'Desenvolvimento de jogos 2D em Unity',
-// 		Descricao:
-// 			'O curso "Desenvolvimento de Jogos 2D em Unity" é uma jornada emocionante no mundo da criação de jogos, projetada para aspirantes a desenvolvedores de jogos e entusiastas da indústria de games. Neste curso envolvente, você aprenderá a usar a poderosa plataforma Unity para desenvolver jogos 2D envolventes, explorando desde os conceitos básicos até técnicas avançadas. Ao final do curso, você estará equipado com o conhecimento e as habilidades necessárias para desenvolver seus próprios jogos 2D criativos e emocionantes, prontos para compartilhar com o mundo ou até mesmo iniciar sua carreira na indústria de desenvolvimento de jogos. Prepare-se para liberar sua imaginação e transformar suas ideias em realidade no emocionante universo dos jogos 2D em Unity',
-
-// 		CriadorId: 1,
-// 		Duracao: 100,
-// 		XP: 100
-// 	},
-// 	{
-// 		Id: 3,
-// 		Titulo: 'Desenvolvimento de jogos 2D em Unity',
-// 		Descricao:
-// 			'O curso "Desenvolvimento de Jogos 2D em Unity" é uma jornada emocionante no mundo da criação de jogos, projetada para aspirantes a desenvolvedores de jogos e entusiastas da indústria de games. Neste curso envolvente, você aprenderá a usar a poderosa plataforma Unity para desenvolver jogos 2D envolventes, explorando desde os conceitos básicos até técnicas avançadas. Ao final do curso, você estará equipado com o conhecimento e as habilidades necessárias para desenvolver seus próprios jogos 2D criativos e emocionantes, prontos para compartilhar com o mundo ou até mesmo iniciar sua carreira na indústria de desenvolvimento de jogos. Prepare-se para liberar sua imaginação e transformar suas ideias em realidade no emocionante universo dos jogos 2D em Unity',
-
-// 		CriadorId: 1,
-// 		Duracao: 100,
-// 		XP: 100
-// 	}
-// ];
+import { jwtDecode } from 'jwt-decode';
+import { parseCookies } from 'nookies';
 
 export default function ListCursosPage() {
 	const [cursos, setCursos] = useState<Curso[]>([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(false);
+	const [currentPage, setCurrentPage] = useState(1);
+	const [itemsPerPage, setItemsPerPage] = useState(3);
 
-	useEffect(() => {
-		(async () => {
-			try {
-				const response = await api.get('/cursos');
-				setCursos(response.data);
-			} catch (error) {
-				console.error(error);
-				setError(true);
-			} finally {
-				setLoading(false);
-			}
-		})();
-	}, []);
+	const nextPage = () => setCurrentPage(currentPage + 1);
+	const prevPage = () => { if (currentPage !== 1) setCurrentPage(currentPage - 1) };
+
+	const { 'portal-jogos.token': token } = parseCookies();
+	const [user] = useState<userProps | null>(jwtDecode(token) || null);
+
+	const fetchCursos = async () => {
+		setLoading(true);
+		setError(false);
+		try {
+		  const response = await api.get(`/cursos/${currentPage}/3`);
+		  setCursos(response.data.cursos);
+		} catch (error) {
+		  console.error(error);
+		  setError(true);
+		} finally {
+		  setLoading(false);
+		}
+	  };
+	
+	  useEffect(() => {
+		if (user) {
+		  fetchCursos();
+		}
+	  }, [user, currentPage]);
 
 	return (
-		<Box backgroundImage={"url('/img/bgHeroSection.png')"}>
+		<Box height={'150vh'} background="linear-gradient(to bottom, #000000, #401336)">
 			<WithSubnavigation />
 			<Flex
 				width={'110vw'}
@@ -80,15 +66,26 @@ export default function ListCursosPage() {
 					>
 						Explorar
 					</Heading>
+					<Box mt={5}>
 					{loading && <p>Loading...</p>}
 					{error && <p>Erro ao carregar os cursos</p>}
-					{!loading && !error && (
+					{!loading && !error && Array.isArray(cursos) && (
 						<>
-							{cursos.map((curso) => (
-								<CardCursoEdit curso={curso} key={curso.Id} />
-							))}
+						{cursos.map((curso) => (
+							<CardCursoEdit curso={curso} key={curso.Id} />
+						))}
+						<Flex justifyContent={'center'} alignItems={'center'} mt={3}>
+							<Button style={{background: '#B530F3', color: '#ffffff'}} onClick={prevPage} disabled={currentPage === 1}>
+							Anterior
+							</Button>
+							<span style={{ color: '#FFFFFF', margin: '0 10px' }}>{currentPage}</span>
+							<Button style={{background: '#B530F3', color: '#ffffff'}} onClick={nextPage} disabled={cursos.length < itemsPerPage}>
+							Próxima
+							</Button>
+						</Flex>
 						</>
 					)}
+					</Box>
 				</Flex>
 			</Flex>
 		</Box>

@@ -1,38 +1,50 @@
+'use client';
 import { WithSubnavigation } from 'components/NavBar';
 
-import { Box, Flex, Grid, GridItem, Progress } from '@chakra-ui/react';
+import { Box, Flex, Grid, GridItem } from '@chakra-ui/react';
 
 import CursosProgress from './CursosProgress';
 import XpProgress from './XpProgress';
 import LastAchievement from './LastAchievement';
 import ProgressBar from './ProgressBar';
+import { userProps } from 'components/ProfilePage/type';
+import { jwtDecode } from 'jwt-decode';
+import { parseCookies } from 'nookies';
+import { useState, useEffect } from 'react';
 
 export default function DashboardStudentPage() {
+	const { 'portal-jogos.token': token } = parseCookies();
+
+	const [user] = useState<userProps | null>(jwtDecode(token) || null);
+	const [XP, setXP] = useState<number>(0);
+	useEffect(() => {
+		setXP(user?.result?.XP || 0);
+	}, [user?.result?.XP]);
+	
 	return (
-		<Box backgroundImage={"url('/img/bgHeroSection.png')"}>
+		<Box background="linear-gradient(to bottom, #000000, #401336)">
 			<WithSubnavigation />
 			<Flex>
 				<Grid
 					templateRows="repeat(2, 2fr)"
 					templateColumns="repeat(4, 1fr)"
-					gap={5}
+					gap={4}
 					width={'100%'}
 					height={'100%'}
 					paddingX={'8.5%'}
-					paddingY={'2rem'}
+					paddingY={'1rem'}
 				>
 					<GridItem colSpan={1}>
 						<LastAchievement />
 					</GridItem>
 					<GridItem>
-						<XpProgress />
+						<XpProgress xp={Number(XP)} />
 					</GridItem>
 					<GridItem colSpan={2}>
 						<CursosProgress />
 					</GridItem>
 					<GridItem colSpan={4}>
-						<ProgressBar />
-						{/* <Progress value={20} size='xs' colorScheme='pink' /> */}
+						<ProgressBar xp={Number(XP)} />
 					</GridItem>
 				</Grid>
 			</Flex>

@@ -29,7 +29,7 @@ export default function NoPaginationPage() {
 	}, []);
 
 	return (
-		<Box backgroundImage={"url('/img/bgHeroSection.png')"}>
+		<Box height={'100%'} bgRepeat={'repeat'} background="linear-gradient(to bottom, #000000, #401336)">
 			<WithSubnavigation />
 			<Flex
 				width={'110vw'}

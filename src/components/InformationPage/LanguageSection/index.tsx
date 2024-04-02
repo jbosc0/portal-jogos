@@ -34,6 +34,7 @@ export const LanguageSection = () => {
 			paddingY={'2%'}
 			paddingInline={'8%'}
 			alignItems={'center'}
+			background="linear-gradient(to bottom, #401336, #000000)"
 		>
 			<Heading
 				as={'b'}

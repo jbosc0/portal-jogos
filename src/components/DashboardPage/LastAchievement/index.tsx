@@ -1,22 +1,10 @@
 'use client';
 
 import { Card, CardBody, Flex, Text } from "@chakra-ui/react";
-import { userProps } from "components/ProfilePage/type";
-
-import { jwtDecode } from 'jwt-decode';
 import Image from "next/image";
-import { parseCookies } from 'nookies';
-import { useEffect, useState } from "react";
+
 
 export default function LastAchievement() {
-    // const { 'portal-jogos.token': token } = parseCookies();
-
-    // const [user] = useState<userProps | null>(jwtDecode(token) || null);
-
-    // const [lastAchievement] = useState(0);
-    // // useEffect(() => {
-
-
     return (
         <Flex justifyContent={'center'} alignItems={'center'}>
             <Card

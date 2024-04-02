@@ -1,8 +1,4 @@
 'use client';
-import { useState, useEffect } from 'react';
-
-import { userProps } from 'components/ProfilePage/type';
-
 import {
 	Card,
 	CardBody,
@@ -11,20 +7,12 @@ import {
 	Flex,
 	Text
 } from '@chakra-ui/react';
-import { jwtDecode } from 'jwt-decode';
-import { parseCookies } from 'nookies';
 
-export default function XpProgress() {
-	const { 'portal-jogos.token': token } = parseCookies();
+interface xpProps {
+	xp: number;
+}
 
-	const [user] = useState<userProps | null>(jwtDecode(token) || null);
-	const [XP, setXP] = useState(0);
-	useEffect(() => {
-		setXP(user?.result?.XP || 0);
-	}, [user?.result?.XP]);
-
-	console.log(user?.result?.XP);
-
+export default function XpProgress(props: xpProps) {
 	return (
 		<Flex justifyContent={'center'} alignItems={'center'}>
 			<Card
@@ -43,12 +31,12 @@ export default function XpProgress() {
 					alignItems={'center'}
 					flexDir={'column'}
 				>
-					<CircularProgress size={52} value={XP / 10} color="#B530F3">
+					<CircularProgress size={52} value={props.xp / 10} color="#B530F3">
 						<CircularProgressLabel
 							fontSize={'2rem'}
 							color={'#FFFFFF'}
 						>
-							{XP}/1000
+							{props.xp}/1000
 						</CircularProgressLabel>
 					</CircularProgress>
 					<Text
