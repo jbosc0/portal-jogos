@@ -35,6 +35,7 @@ import { api } from 'services/api';
 import * as yup from 'yup';
 
 import { ProfileFormProps, userProps } from './type';
+import Insignias from './insignias/Insignias';
 
 const ProfileFormSchema = yup.object().shape({
 	tagName: yup.string().required('TagName obrigatório'),
@@ -220,6 +221,7 @@ export const ProfilePage = () => {
 							<FiTwitter fontSize={'1.5rem'} color={'#1AA2F8'} />
 						</Link>
 					</Flex>
+					<Insignias />
 				</Flex>
 				<Flex
 					alignItems={'center'}
